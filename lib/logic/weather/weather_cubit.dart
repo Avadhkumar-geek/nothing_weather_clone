@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nothing_weather_clone/data/models/forecast_model.dart';
 import 'package:nothing_weather_clone/data/repository/weather_repo.dart';
 
