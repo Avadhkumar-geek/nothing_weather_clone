@@ -31,17 +31,22 @@ class ForecastWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  epochToDateTime(forecast.dailyForecasts![index].epochDate!).day ==
+                  epochToDateTime(forecast.dailyForecasts![index].epochDate!)
+                              .day ==
                           DateTime.now().day
                       ? days[0]!
-                      : days[epochToDateTime(forecast.dailyForecasts![index].epochDate!).weekday]!,
+                      : days[epochToDateTime(
+                              forecast.dailyForecasts![index].epochDate!)
+                          .weekday]!,
                   style: const TextStyle(fontSize: 12),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 7.5),
                   child: SvgPicture.asset(
                     getSvgPath(
-                        forecast.dailyForecasts![index].day!.iconPhrase!.toLowerCase(), true)!,
+                        forecast.dailyForecasts![index].day!.iconPhrase!
+                            .toLowerCase(),
+                        true)!,
                     height: 16,
                   ),
                 ),
