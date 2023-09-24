@@ -12,8 +12,8 @@ class AccuWeatherAPI {
   static const String _baseUrl = "dataservice.accuweather.com";
 
   static Future<List<LocationModel>> getLocation(String query) async {
-    final locationRequest =
-        Uri.https(_baseUrl, '/locations/v1/cities/autocomplete', {"q": query, "apikey": apiKey});
+    final locationRequest = Uri.https(_baseUrl,
+        '/locations/v1/cities/autocomplete', {"q": query, "apikey": apiKey});
 
     final locationResponse = await http.get(locationRequest);
 
@@ -23,14 +23,17 @@ class AccuWeatherAPI {
 
     final locationJson = jsonDecode(locationResponse.body) as List;
 
-    final locationList = locationJson.map((e) => LocationModel.fromJson(e)).toList();
+    final locationList =
+        locationJson.map((e) => LocationModel.fromJson(e)).toList();
 
     return locationList;
   }
 
   static Future<WeatherModel> getWeatherData(int cityCode) async {
     final weatherRequest = Uri.https(
-        _baseUrl, '/currentconditions/v1/$cityCode', {"apikey": apiKey, "details": "true"});
+        _baseUrl,
+        '/currentconditions/v1/$cityCode',
+        {"apikey": apiKey, "details": "true"});
 
     final weatherResponse = await http.get(weatherRequest);
 
@@ -47,7 +50,9 @@ class AccuWeatherAPI {
   }
 
   static Future<ForecastModel> getForecastData(int cityCode) async {
-    final forecastRequest = Uri.https(_baseUrl, '/forecasts/v1/daily/5day/$cityCode',
+    final forecastRequest = Uri.https(
+        _baseUrl,
+        '/forecasts/v1/daily/5day/$cityCode',
         {"apikey": apiKey, "details": "true", "metric": "true"});
 
     final forecastResponse = await http.get(forecastRequest);
@@ -56,15 +61,19 @@ class AccuWeatherAPI {
       throw 'No data available';
     }
 
-    final forecastJson = jsonDecode(forecastResponse.body) as Map<String, dynamic>;
+    final forecastJson =
+        jsonDecode(forecastResponse.body) as Map<String, dynamic>;
 
     final forecastData = ForecastModel.fromJson(forecastJson);
 
     return forecastData;
   }
 
-  static Future<int> getGeoPositionnKey(double latitude, double longitude) async {
-    final positionRequest = Uri.https(_baseUrl, '/locations/v1/cities/geoposition/search',
+  static Future<int> getGeoPositionnKey(
+      double latitude, double longitude) async {
+    final positionRequest = Uri.https(
+        _baseUrl,
+        '/locations/v1/cities/geoposition/search',
         {"apikey": apiKey, "q": "$latitude,$longitude"});
 
     final positionResponse = await http.get(positionRequest);
@@ -73,7 +82,8 @@ class AccuWeatherAPI {
       throw 'No data available';
     }
 
-    final positionJson = jsonDecode(positionResponse.body) as Map<String, dynamic>;
+    final positionJson =
+        jsonDecode(positionResponse.body) as Map<String, dynamic>;
 
     final positionData = GeoPositionKeyModel.fromJson(positionJson);
 

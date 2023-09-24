@@ -64,21 +64,23 @@ class LocationsScreen extends StatelessWidget {
                         },
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 12, vertical: 8.0),
                             child: ListTile(
                               title: Text(
                                 state.savedLocations![index].localizedName!,
-                                style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w300),
+                                style: const TextStyle(
+                                    fontSize: 26, fontWeight: FontWeight.w300),
                               ),
                               onTap: () {
-                                context
-                                    .read<WeatherCubit>()
-                                    .fetchWeather(int.parse(state.locations![index].key!));
+                                context.read<WeatherCubit>().fetchWeather(
+                                    int.parse(state.locations![index].key!));
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          HomeScreen(city: state.locations![index].localizedName),
+                                      builder: (context) => HomeScreen(
+                                          city: state
+                                              .locations![index].localizedName),
                                     ));
                               },
                             ),

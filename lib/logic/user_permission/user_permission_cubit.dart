@@ -27,9 +27,11 @@ class UserPermissionCubit extends Cubit<UserPermissionState> {
     }
 
     locationData = await Geolocator.getCurrentPosition();
-    await AccuWeatherAPI.getGeoPositionnKey(locationData.latitude, locationData.longitude)
+    await AccuWeatherAPI.getGeoPositionnKey(
+            locationData.latitude, locationData.longitude)
         .then((positionKey) {
-      emit(state.copywith(status: PermissionStatus.always, positionKey: positionKey));
+      emit(state.copywith(
+          status: PermissionStatus.always, positionKey: positionKey));
       return 0;
     });
     // log('${_locationData!.latitude!.toString()}, ${_locationData!.longitude!.toString()}}');

@@ -24,6 +24,7 @@ class LocationsCubit extends Cubit<LocationsState> {
 
   Future<void> addLocation(LocationModel location) async {
     savedLocations.add(location);
-    emit(state.copywith(status: LocationsStatus.success, savedLocations: savedLocations));
+    emit(state.copywith(
+        status: LocationsStatus.success, savedLocations: savedLocations));
   }
 }

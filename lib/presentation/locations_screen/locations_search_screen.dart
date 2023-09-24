@@ -36,7 +36,8 @@ class LocationsSearchScreen extends StatelessWidget {
               controller: controller,
               decoration: const InputDecoration(
                 hintText: "Search",
-                hintStyle: TextStyle(fontWeight: FontWeight.w300, color: kPrimaryColor),
+                hintStyle: TextStyle(
+                    fontWeight: FontWeight.w300, color: kPrimaryColor),
               ),
               onSubmitted: (value) {
                 context.read<LocationsCubit>().locationsList(value.trim());
@@ -56,7 +57,8 @@ class LocationsSearchScreen extends StatelessWidget {
                   ),
                 );
               }
-              if (state.status == LocationsStatus.success && state.locations == null) {
+              if (state.status == LocationsStatus.success &&
+                  state.locations == null) {
                 return const Center(
                   child: Text(
                     "NO RESULTS",
@@ -82,7 +84,9 @@ class LocationsSearchScreen extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          context.read<LocationsCubit>().addLocation(locations[index]);
+                          context
+                              .read<LocationsCubit>()
+                              .addLocation(locations[index]);
                           Navigator.pop(context);
                         },
                       );
