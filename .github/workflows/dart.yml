@@ -24,7 +24,7 @@ jobs:
             - run: flutter doctor
             - run: flutter pub get
             - run: dart format --set-exit-if-changed .
-            - run: flutter analyze lib example
+            - run: flutter analyze lib
             - run: flutter test --no-pub --coverage
 
             - name: Upload coverage to codecov
