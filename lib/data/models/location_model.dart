@@ -4,17 +4,14 @@ class LocationModel {
   Country? country;
   Country? administrativeArea;
 
-  LocationModel(
-      {this.key, this.localizedName, this.country, this.administrativeArea});
+  LocationModel({this.key, this.localizedName, this.country, this.administrativeArea});
 
   LocationModel.fromJson(Map<String, dynamic> json) {
     key = json['Key'];
     localizedName = json['LocalizedName'];
-    country =
-        json['Country'] != null ? Country.fromJson(json['Country']) : null;
-    administrativeArea = json['AdministrativeArea'] != null
-        ? Country.fromJson(json['AdministrativeArea'])
-        : null;
+    country = json['Country'] != null ? Country.fromJson(json['Country']) : null;
+    administrativeArea =
+        json['AdministrativeArea'] != null ? Country.fromJson(json['AdministrativeArea']) : null;
   }
 
   Map<String, dynamic> toJson() {

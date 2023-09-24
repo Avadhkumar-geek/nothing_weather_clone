@@ -34,9 +34,7 @@ class WeatherModel {
     weatherIcon = json['WeatherIcon'];
     hasPrecipitation = json['HasPrecipitation'];
     isDayTime = json['IsDayTime'];
-    temperature = json['Temperature'] != null
-        ? Temperature.fromJson(json['Temperature'])
-        : null;
+    temperature = json['Temperature'] != null ? Temperature.fromJson(json['Temperature']) : null;
     realFeelTemperature = json['RealFeelTemperature'] != null
         ? Temperature.fromJson(json['RealFeelTemperature'])
         : null;
@@ -120,9 +118,7 @@ class Wind {
   Wind({this.direction, this.speed});
 
   Wind.fromJson(Map<String, dynamic> json) {
-    direction = json['Direction'] != null
-        ? Direction.fromJson(json['Direction'])
-        : null;
+    direction = json['Direction'] != null ? Direction.fromJson(json['Direction']) : null;
     speed = json['Speed'] != null ? Temperature.fromJson(json['Speed']) : null;
   }
 

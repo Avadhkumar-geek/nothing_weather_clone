@@ -10,8 +10,7 @@ part 'weather_state.dart';
 class WeatherCubit extends Cubit<WeatherState> {
   final WeatherRepo weatherRepo;
 
-  WeatherCubit(this.weatherRepo)
-      : super(const WeatherState(status: WeatherStatus.initial));
+  WeatherCubit(this.weatherRepo) : super(const WeatherState(status: WeatherStatus.initial));
 
   Future<void> fetchWeather(int? cityKey) async {
     if (cityKey == null) {
@@ -24,9 +23,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     try {
       final weather = await weatherRepo.getWeather(cityKey);
       emit(state.copyWith(
-          status: WeatherStatus.success,
-          forecast: weather.forecast,
-          weather: weather.weather));
+          status: WeatherStatus.success, forecast: weather.forecast, weather: weather.weather));
     } catch (_) {
       emit(state.copyWith(status: WeatherStatus.failure));
     }

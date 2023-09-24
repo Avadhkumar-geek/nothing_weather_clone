@@ -7,13 +7,9 @@ class WeatherState extends Equatable {
   final WeatherModel? weather;
   final ForecastModel? forecast;
 
-  const WeatherState(
-      {this.status = WeatherStatus.initial, this.forecast, this.weather});
+  const WeatherState({this.status = WeatherStatus.initial, this.forecast, this.weather});
 
-  WeatherState copyWith(
-          {WeatherStatus? status,
-          WeatherModel? weather,
-          ForecastModel? forecast}) =>
+  WeatherState copyWith({WeatherStatus? status, WeatherModel? weather, ForecastModel? forecast}) =>
       WeatherState(
           status: status ?? this.status,
           forecast: forecast ?? this.forecast,
@@ -21,9 +17,7 @@ class WeatherState extends Equatable {
 
   factory WeatherState.fromJson(Map<String, dynamic> json) {
     return WeatherState(
-        forecast: json['forecast'],
-        status: json['status'],
-        weather: json['weather']);
+        forecast: json['forecast'], status: json['status'], weather: json['weather']);
   }
 
   Map<String, dynamic> toJson() {

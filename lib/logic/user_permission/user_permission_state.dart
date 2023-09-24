@@ -1,12 +1,6 @@
 part of 'user_permission_cubit.dart';
 
-enum PermissionStatus {
-  always,
-  denied,
-  deniedForever,
-  whileInUse,
-  unableToDetermine
-}
+enum PermissionStatus { always, denied, deniedForever, whileInUse, unableToDetermine }
 
 class UserPermissionState extends Equatable {
   final PermissionStatus status;
@@ -17,14 +11,11 @@ class UserPermissionState extends Equatable {
     this.positionKey,
   });
 
-  UserPermissionState copywith({PermissionStatus? status, int? positionKey}) =>
-      UserPermissionState(
-          status: status ?? this.status,
-          positionKey: positionKey ?? this.positionKey);
+  UserPermissionState copywith({PermissionStatus? status, int? positionKey}) => UserPermissionState(
+      status: status ?? this.status, positionKey: positionKey ?? this.positionKey);
 
   factory UserPermissionState.fromJson(Map<String, dynamic> json) {
-    return UserPermissionState(
-        status: json['status'], positionKey: json['positionKey']);
+    return UserPermissionState(status: json['status'], positionKey: json['positionKey']);
   }
 
   UserPermissionState toMap() {

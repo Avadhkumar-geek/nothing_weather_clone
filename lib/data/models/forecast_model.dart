@@ -5,8 +5,7 @@ class ForecastModel {
   ForecastModel({this.headline, this.dailyForecasts});
 
   ForecastModel.fromJson(Map<String, dynamic> json) {
-    headline =
-        json['Headline'] != null ? Headline.fromJson(json['Headline']) : null;
+    headline = json['Headline'] != null ? Headline.fromJson(json['Headline']) : null;
     if (json['DailyForecasts'] != null) {
       dailyForecasts = <DailyForecasts>[];
       json['DailyForecasts'].forEach((v) {
@@ -90,9 +89,7 @@ class DailyForecasts {
     date = json['Date'];
     epochDate = json['EpochDate'];
     sun = json['Sun'] != null ? Sun.fromJson(json['Sun']) : null;
-    temperature = json['Temperature'] != null
-        ? Temperature.fromJson(json['Temperature'])
-        : null;
+    temperature = json['Temperature'] != null ? Temperature.fromJson(json['Temperature']) : null;
     if (json['AirAndPollen'] != null) {
       airAndPollen = <AirAndPollen>[];
       json['AirAndPollen'].forEach((v) {
@@ -156,10 +153,8 @@ class Temperature {
   Temperature({this.minimum, this.maximum});
 
   Temperature.fromJson(Map<String, dynamic> json) {
-    minimum =
-        json['Minimum'] != null ? Minimum.fromJson(json['Minimum']) : null;
-    maximum =
-        json['Maximum'] != null ? Minimum.fromJson(json['Maximum']) : null;
+    minimum = json['Minimum'] != null ? Minimum.fromJson(json['Minimum']) : null;
+    maximum = json['Maximum'] != null ? Minimum.fromJson(json['Maximum']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -203,8 +198,7 @@ class AirAndPollen {
   int? categoryValue;
   String? type;
 
-  AirAndPollen(
-      {this.name, this.value, this.category, this.categoryValue, this.type});
+  AirAndPollen({this.name, this.value, this.category, this.categoryValue, this.type});
 
   AirAndPollen.fromJson(Map<String, dynamic> json) {
     name = json['Name'];
@@ -231,11 +225,7 @@ class Day {
   bool? hasPrecipitation;
   String? precipitationType;
 
-  Day(
-      {this.icon,
-      this.iconPhrase,
-      this.hasPrecipitation,
-      this.precipitationType});
+  Day({this.icon, this.iconPhrase, this.hasPrecipitation, this.precipitationType});
 
   Day.fromJson(Map<String, dynamic> json) {
     icon = json['Icon'];

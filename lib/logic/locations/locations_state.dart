@@ -30,8 +30,7 @@ class LocationsState extends Equatable {
   }
 
   LocationsState toMap() {
-    return LocationsState(
-        status: status, locations: locations, savedLocations: savedLocations);
+    return LocationsState(status: status, locations: locations, savedLocations: savedLocations);
   }
 
   @override

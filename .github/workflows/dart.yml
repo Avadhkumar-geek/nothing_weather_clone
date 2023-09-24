@@ -23,7 +23,7 @@ jobs:
                   channel: "stable"
             - run: flutter doctor
             - run: flutter pub get
-            - run: dart format --set-exit-if-changed .
+            - run: dart format --set-exit-if-changed -l 100 lib -l 100 example
             - run: flutter analyze lib
             - run: flutter test --no-pub --coverage
 

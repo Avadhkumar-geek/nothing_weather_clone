@@ -83,13 +83,11 @@ class MyCard extends StatelessWidget {
             Text.rich(
               TextSpan(
                   text: data,
-                  style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.w400, height: 1),
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w400, height: 1),
                   children: [
                     TextSpan(
                       text: units,
-                      style: const TextStyle(
-                          fontSize: 12, fontWeight: FontWeight.w400, height: 1),
+                      style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400, height: 1),
                     )
                   ]),
             ),

@@ -36,9 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<UserPermissionCubit>().getUserPermission();
                 if (permissionState.status == PermissionStatus.always ||
                     permissionState.status == PermissionStatus.whileInUse) {
-                  context
-                      .read<WeatherCubit>()
-                      .fetchWeather(permissionState.positionKey);
+                  context.read<WeatherCubit>().fetchWeather(permissionState.positionKey);
                 }
               }
 
@@ -117,8 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Center(
                     child: SvgPicture.asset(
-                      getSvgPath(weather.weatherText!.toLowerCase(),
-                          weather.isDayTime!)!,
+                      getSvgPath(weather.weatherText!.toLowerCase(), weather.isDayTime!)!,
                       height: 200,
                     ),
                   ),
@@ -134,8 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.only(right: 24.0, left: 24, top: 5, bottom: 5),
+            padding: const EdgeInsets.only(right: 24.0, left: 24, top: 5, bottom: 5),
             child: GridView(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -147,8 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               children: [
                 RoundedWidget(
-                  txt1:
-                      '${weather.temperature!.metric!.value!.round().toString()}°',
+                  txt1: '${weather.temperature!.metric!.value!.round().toString()}°',
                   txtSize1: 50,
                   txtWeight1: FontWeight.w200,
                   txt2:
@@ -161,11 +156,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 21, horizontal: 18),
+                      padding: const EdgeInsets.symmetric(vertical: 21, horizontal: 18),
                       decoration: BoxDecoration(
-                          color: kTertiaryColor,
-                          borderRadius: BorderRadius.circular(100)),
+                          color: kTertiaryColor, borderRadius: BorderRadius.circular(100)),
                       child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -187,11 +180,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Container(
                       width: double.infinity,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 21, horizontal: 18),
+                      padding: const EdgeInsets.symmetric(vertical: 21, horizontal: 18),
                       decoration: BoxDecoration(
-                          color: kTertiaryColor,
-                          borderRadius: BorderRadius.circular(100)),
+                          color: kTertiaryColor, borderRadius: BorderRadius.circular(100)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -268,8 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
               image: 'assets/svg/air_quality.svg',
               title: 'AIR QUALITY',
               subTitle: forecast.dailyForecasts![0].airAndPollen![0].category,
-              data: forecast.dailyForecasts![0].airAndPollen![0].categoryValue
-                  .toString()),
+              data: forecast.dailyForecasts![0].airAndPollen![0].categoryValue.toString()),
           MyCard(
               image: 'assets/svg/humidity.svg',
               title: 'HUMIDITY',
@@ -286,18 +276,14 @@ class _HomeScreenState extends State<HomeScreen> {
               subTitle: weather.uVIndexText,
               data: '0${weather.uVIndex.toString()}'),
           MyCard(
-            image: weather.isDayTime!
-                ? 'assets/svg/sunset.svg'
-                : 'assets/svg/sunrise.svg',
+            image: weather.isDayTime! ? 'assets/svg/sunset.svg' : 'assets/svg/sunrise.svg',
             title: weather.isDayTime! ? 'SUNSET' : 'SUNRISE',
             data: (() {
               if (weather.isDayTime!) {
-                final date =
-                    epochToDateTime(forecast.dailyForecasts![0].sun!.epochSet!);
+                final date = epochToDateTime(forecast.dailyForecasts![0].sun!.epochSet!);
                 return '${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
               } else {
-                final date = epochToDateTime(
-                    forecast.dailyForecasts![1].sun!.epochRise!);
+                final date = epochToDateTime(forecast.dailyForecasts![1].sun!.epochRise!);
                 return '${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
               }
             }()),
@@ -306,8 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
             txt1: 'FEELS LIKE',
             txtSize1: 13,
             txtWeight1: FontWeight.w300,
-            txt2:
-                '${weather.realFeelTemperature!.metric!.value!.round().toString()}°',
+            txt2: '${weather.realFeelTemperature!.metric!.value!.round().toString()}°',
             txtSize2: 50,
             txtWeight2: FontWeight.w200,
           ),

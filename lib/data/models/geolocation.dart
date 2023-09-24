@@ -6,19 +6,11 @@ class GeolocationModel {
   String? country;
   String? state;
 
-  GeolocationModel(
-      {this.name,
-      this.localNames,
-      this.lat,
-      this.lon,
-      this.country,
-      this.state});
+  GeolocationModel({this.name, this.localNames, this.lat, this.lon, this.country, this.state});
 
   GeolocationModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    localNames = json['local_names'] != null
-        ? LocalNames.fromJson(json['local_names'])
-        : null;
+    localNames = json['local_names'] != null ? LocalNames.fromJson(json['local_names']) : null;
     lat = json['lat'];
     lon = json['lon'];
     country = json['country'];
