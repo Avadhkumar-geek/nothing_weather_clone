@@ -18,6 +18,7 @@ class AccuWeatherAPI {
     final locationResponse = await http.get(locationRequest);
 
     if (locationResponse.statusCode != 200) {
+      log(locationResponse.statusCode.toString());
       throw 'No location Found';
     }
 

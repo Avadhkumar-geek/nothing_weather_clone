@@ -3,11 +3,13 @@ String? getSvgPath(String text, bool isDayTime) {
     'sunny': 'assets/svg/sunny.svg',
     'mostly sunny': 'assets/svg/sunny.svg',
     'partly sunny': 'assets/svg/partly_sunny.svg',
-    'cloud and sun': 'assets/svg/partly_sunny.svg',
+    'clouds and sun': 'assets/svg/partly_sunny.svg',
+    'some clouds': 'assets/svg/partly_sunny.svg',
     'intermittent clouds': 'assets/svg/partly_sunny.svg',
     'mostly cloudy': 'assets/svg/partly_sunny.svg',
     'hazy sunshine': 'assets/svg/partly_sunny.svg',
     'cloudy': 'assets/svg/cloudy.svg',
+    'light rain': 'assets/svg/rain.svg',
     'rain': 'assets/svg/rain.svg',
     'showers': 'assets/svg/rain.svg',
     'thunderstorm': 'assets/svg/thunderstorm.svg',
@@ -24,10 +26,12 @@ String? getSvgPath(String text, bool isDayTime) {
     'clear': 'assets/svg/clear.svg',
     'mostly clear': 'assets/svg/clear.svg',
     'partly cloudy': 'assets/svg/partly_cloudy.svg',
+    'some clouds': 'assets/svg/partly_cloudy.svg',
     'intermittent clouds': 'assets/svg/partly_cloudy.svg',
     'mostly cloudy': 'assets/svg/partly_cloudy.svg',
     'hazy moonlight': 'assets/svg/hazy_clouds.svg',
     'cloudy': 'assets/svg/cloudy.svg',
+    'light rain': 'assets/svg/rain.svg',
     'rain': 'assets/svg/rain.svg',
     'showers': 'assets/svg/rain.svg',
     'thunderstorm': 'assets/svg/thunderstorm.svg',
@@ -41,5 +45,5 @@ String? getSvgPath(String text, bool isDayTime) {
   };
 
   final mappings = isDayTime ? dayTimeMappings : nightTimeMappings;
-  return mappings.containsKey(text) ? mappings[text] : 'assets/svg/rain.svg';
+  return mappings.containsKey(text) ? mappings[text] : 'assets/svg/cloudy.svg';
 }

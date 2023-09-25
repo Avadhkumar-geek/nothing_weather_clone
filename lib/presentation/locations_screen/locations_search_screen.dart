@@ -35,6 +35,12 @@ class LocationsSearchScreen extends StatelessWidget {
             child: TextField(
               controller: controller,
               decoration: const InputDecoration(
+                border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: kPrimaryColor),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: kPrimaryColor),
+                ),
                 hintText: "Search",
                 hintStyle: TextStyle(fontWeight: FontWeight.w300, color: kPrimaryColor),
               ),

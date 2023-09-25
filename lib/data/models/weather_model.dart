@@ -5,8 +5,8 @@ class WeatherModel {
   int? weatherIcon;
   bool? hasPrecipitation;
   bool? isDayTime;
-  Temperature? temperature;
-  Temperature? realFeelTemperature;
+  WeatherTemperature? temperature;
+  WeatherTemperature? realFeelTemperature;
   int? relativeHumidity;
   Wind? wind;
   int? uVIndex;
@@ -34,9 +34,10 @@ class WeatherModel {
     weatherIcon = json['WeatherIcon'];
     hasPrecipitation = json['HasPrecipitation'];
     isDayTime = json['IsDayTime'];
-    temperature = json['Temperature'] != null ? Temperature.fromJson(json['Temperature']) : null;
+    temperature =
+        json['Temperature'] != null ? WeatherTemperature.fromJson(json['Temperature']) : null;
     realFeelTemperature = json['RealFeelTemperature'] != null
-        ? Temperature.fromJson(json['RealFeelTemperature'])
+        ? WeatherTemperature.fromJson(json['RealFeelTemperature'])
         : null;
     relativeHumidity = json['RelativeHumidity'];
     wind = json['Wind'] != null ? Wind.fromJson(json['Wind']) : null;
@@ -68,12 +69,12 @@ class WeatherModel {
   }
 }
 
-class Temperature {
+class WeatherTemperature {
   Metric? metric;
 
-  Temperature({this.metric});
+  WeatherTemperature({this.metric});
 
-  Temperature.fromJson(Map<String, dynamic> json) {
+  WeatherTemperature.fromJson(Map<String, dynamic> json) {
     metric = json['Metric'] != null ? Metric.fromJson(json['Metric']) : null;
   }
 
@@ -113,13 +114,13 @@ class Metric {
 
 class Wind {
   Direction? direction;
-  Temperature? speed;
+  WeatherTemperature? speed;
 
   Wind({this.direction, this.speed});
 
   Wind.fromJson(Map<String, dynamic> json) {
     direction = json['Direction'] != null ? Direction.fromJson(json['Direction']) : null;
-    speed = json['Speed'] != null ? Temperature.fromJson(json['Speed']) : null;
+    speed = json['Speed'] != null ? WeatherTemperature.fromJson(json['Speed']) : null;
   }
 
   Map<String, dynamic> toJson() {

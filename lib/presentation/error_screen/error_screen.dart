@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:nothing_weather_clone/data/constants/colors.dart';
 
 class ErrorScreen extends StatelessWidget {
@@ -65,6 +66,9 @@ class ErrorScreen extends StatelessWidget {
                 child: Text.rich(
                   TextSpan(
                     text: 'LOCATION PERMISSION\n',
+                    style: const TextStyle(
+                      fontSize: 13,
+                    ),
                     children: [
                       TextSpan(
                         text:
@@ -74,12 +78,18 @@ class ErrorScreen extends StatelessWidget {
                           color: kPrimaryColor.withOpacity(0.5),
                         ),
                       ),
-                      const TextSpan(
-                        text: '\nEdit premissions',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: kPrimaryColor,
-                          decoration: TextDecoration.underline,
+                      WidgetSpan(
+                        child: GestureDetector(
+                          onTap: () => Geolocator.openLocationSettings(),
+                          child: const Text(
+                            'Edit premissions',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: kPrimaryColor,
+                              fontWeight: FontWeight.w500,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -97,7 +107,7 @@ class ErrorScreen extends StatelessWidget {
           width: 100,
         ),
         const SizedBox(
-          height: 12,
+          height: 30,
         )
       ],
     );

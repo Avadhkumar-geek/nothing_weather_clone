@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nothing_weather_clone/data/models/forecast_model.dart';
@@ -13,6 +15,7 @@ class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit(this.weatherRepo) : super(const WeatherState(status: WeatherStatus.initial));
 
   Future<void> fetchWeather(int? cityKey) async {
+    log('fetching...');
     if (cityKey == null) {
       emit(state.copyWith(status: WeatherStatus.failure));
       return;

@@ -11,7 +11,7 @@ class UserPermissionState extends Equatable {
     this.positionKey,
   });
 
-  UserPermissionState copywith({PermissionStatus? status, int? positionKey}) => UserPermissionState(
+  UserPermissionState copyWith({PermissionStatus? status, int? positionKey}) => UserPermissionState(
       status: status ?? this.status, positionKey: positionKey ?? this.positionKey);
 
   factory UserPermissionState.fromJson(Map<String, dynamic> json) {

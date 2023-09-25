@@ -8,3 +8,8 @@ Map<int, String> days = {
   6: 'SAT',
   7: 'SUN',
 };
+
+DateTime epochToDateTime(int epoch) {
+  final date = DateTime.fromMillisecondsSinceEpoch(epoch * 1000);
+  return date;
+}

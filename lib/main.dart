@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nothing_weather_clone/data/repository/weather_repo.dart';
 import 'package:nothing_weather_clone/logic/locations/locations_cubit.dart';
 import 'package:nothing_weather_clone/logic/user_permission/user_permission_cubit.dart';
 import 'package:nothing_weather_clone/logic/weather/weather_cubit.dart';
-import 'package:nothing_weather_clone/presentation/demo.dart';
+import 'package:nothing_weather_clone/presentation/home_screen/home_screen.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(systemNavigationBarColor: Colors.transparent));
+
   runApp(const MyApp());
 }
 
