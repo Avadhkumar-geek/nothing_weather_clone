@@ -82,7 +82,9 @@ class LocationsScreen extends StatelessWidget {
                             endActionPane: ActionPane(
                               dismissible: DismissiblePane(
                                 key: Key(state.savedLocations![index].key!),
-                                onDismissed: () {},
+                                onDismissed: () {
+                                  context.read<LocationsCubit>().removeLocation(index);
+                                },
                               ),
                               closeThreshold: 0.5,
                               extentRatio: 0.20,
