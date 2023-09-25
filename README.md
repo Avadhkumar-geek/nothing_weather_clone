@@ -33,7 +33,15 @@ flutter run
 ```
 
 ## Screenshots
+<img src="https://github.com/Avadhkumar-geek/nothing_weather_clone/assets/81379791/91abe060-4e88-40b0-af86-ee04af8e8233" alt="1" height="500" width="250">
 
+<img src="https://github.com/Avadhkumar-geek/nothing_weather_clone/assets/81379791/a9bd4cca-5d7c-4bf8-a4e4-122b64cbd0df" alt="2" height="500" width="250">
+
+<img src="https://github.com/Avadhkumar-geek/nothing_weather_clone/assets/81379791/647fa61f-f516-44cd-81cc-dbaa8506c0de" alt="3" height="500" width="250">
+
+<img src="https://github.com/Avadhkumar-geek/nothing_weather_clone/assets/81379791/0aa97def-5ed8-477a-8bd7-8141b6d4f2bc" alt="4" height="500" width="250">
+
+<img src="https://github.com/Avadhkumar-geek/nothing_weather_clone/assets/81379791/5caa4f0f-0191-467a-b2b4-37599d5fca5b" alt="5" height="500" width="250">
 
 ## Contributing
 
