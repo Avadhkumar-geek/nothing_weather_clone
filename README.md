@@ -1,4 +1,4 @@
-# 🌦 Nothing Weather App Clone in Flutter
+# 🌦️ Nothing Weather App Clone in Flutter
 
 [![Made with Flutter](https://img.shields.io/badge/Made%20with-Flutter-blue.svg)](https://flutter.dev/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
