@@ -80,7 +80,9 @@ class LocationsScreen extends StatelessWidget {
                             key: Key(state.savedLocations![index].key!),
                             dragStartBehavior: DragStartBehavior.start,
                             endActionPane: ActionPane(
+                              dragDismissible: true,
                               dismissible: DismissiblePane(
+                                dismissThreshold: 0.5,
                                 key: Key(state.savedLocations![index].key!),
                                 onDismissed: () {
                                   context.read<LocationsCubit>().removeLocation(index);

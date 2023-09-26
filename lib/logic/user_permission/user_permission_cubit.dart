@@ -22,7 +22,6 @@ class UserPermissionCubit extends Cubit<UserPermissionState> {
       final serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         emit(state.copyWith(status: PermissionStatus.denied));
-        return;
       }
 
       var permission = await _checkAndRequestPermission();
