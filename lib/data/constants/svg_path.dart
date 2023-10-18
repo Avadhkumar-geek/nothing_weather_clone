@@ -7,7 +7,7 @@ String? getSvgPath(String text, bool isDayTime) {
     'some clouds': 'assets/svg/partly_sunny.svg',
     'intermittent clouds': 'assets/svg/partly_sunny.svg',
     'mostly cloudy': 'assets/svg/partly_sunny.svg',
-    'hazy sunshine': 'assets/svg/partly_sunny.svg',
+    'hazy sunshine': 'assets/svg/hazy_sunshine.svg',
     'cloudy': 'assets/svg/cloudy.svg',
     'light rain': 'assets/svg/rain.svg',
     'rain': 'assets/svg/rain.svg',
@@ -18,6 +18,7 @@ String? getSvgPath(String text, bool isDayTime) {
     'partly sunny w/ t-storms': 'assets/svg/thunderstorm.svg',
     'partly cloudy w/ t-storms': 'assets/svg/thunderstorm.svg',
     'snow': 'assets/svg/snow.svg',
+    'fog': 'assets/svg/fog.svg',
     'mostly cloudy w/ snow': 'assets/svg/snow.svg',
     'ice': 'assets/svg/snow.svg',
   };
@@ -40,6 +41,7 @@ String? getSvgPath(String text, bool isDayTime) {
     'partly sunny w/ t-storms': 'assets/svg/thunderstorm.svg',
     'partly cloudy w/ t-storms': 'assets/svg/thunderstorm.svg',
     'snow': 'assets/svg/snow.svg',
+    'fog': 'assets/svg/fog.svg',
     'mostly cloudy w/ snow': 'assets/svg/snow.svg',
     'ice': 'assets/svg/snow.svg',
   };
